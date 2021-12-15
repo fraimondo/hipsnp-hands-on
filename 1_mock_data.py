@@ -27,8 +27,6 @@ workdir = mkdtemp()
 # localion of the datalad dataset
 source = 'https://gin.g-node.org/juaml/datalad-example-bgen'
 
-os.environ['QCTOOL_PATH'] = '/home/oportoles/Apps/qctool_v2.0.6-Ubuntu16.04-x86_64/qctool'
-
 ###############################################################################
 # list of the rsids (with thier corresponding chromosome numbers) that we want
 # to analyse. If the machine is connected to internet, the chromosomes do not
