@@ -83,4 +83,4 @@ Output should be something like this:
 
 ```
 pip install hipsnp
-pip install https://github.com/kaurao/ukbb_parser.git
+pip install "git+https://github.com/kaurao/ukbb_parser.git"
