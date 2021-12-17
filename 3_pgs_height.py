@@ -1,4 +1,3 @@
-import datalad
 from hipsnp import genotype_from_datalad, read_weights
 from hipsnp.utils import configure_logging
 

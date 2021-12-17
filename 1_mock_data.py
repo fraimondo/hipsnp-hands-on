@@ -12,7 +12,6 @@ import shutil
 from hipsnp.hipsnp import genotype_from_datalad
 from hipsnp.utils import configure_logging
 import numpy as np
-import os
 
 ###############################################################################
 # Set the logging level to info to see extra information
@@ -30,7 +29,7 @@ source = 'https://gin.g-node.org/juaml/datalad-example-bgen'
 ###############################################################################
 # list of the rsids (with thier corresponding chromosome numbers) that we want
 # to analyse. If the machine is connected to internet, the chromosomes do not
-# need to be spcified. Due to the nature of the mock dataset, here we need the 
+# need to be spcified. Due to the nature of the mock dataset, here we need the
 # chromosome number
 rsids_of_interest = ['RSID_3', 'RSID_5', 'RSID_6', 'RSID_8']
 chromosomes = ['1'] * len(rsids_of_interest)
@@ -55,7 +54,7 @@ print((f'Allele probabilities for the first 3 samples of RSID_5\
 
 
 ###############################################################################
-# Now we are ready to obtain the alleles of each rsid and sample in the data. 
+# Now we are ready to obtain the alleles of each rsid and sample in the data.
 # Here we will compute the allele of only one RSID
 gen_allele, gen_012 = genotype.alleles(rsids='RSID_5')
 
@@ -78,13 +77,15 @@ print(f'most probale allele combination in the first 3 samples:\n \
 path_to_weights = './data/weights_all.csv'
 
 ##############################################################################
-# For this example will obtain the risk scores of two groups of subjects presnt 
+# For this example will obtain the risk scores of two groups of subjects presnt
 # in the genotype
 
-samples_of_interest_A = ['sample_001', 'sample_002', 'sample_003', 'sample_004']
-samples_of_interest_B = ['sample_011', 'sample_012', 'sample_013', 'sample_014']
+samples_of_interest_A = [
+        'sample_001', 'sample_002', 'sample_003', 'sample_004']
+samples_of_interest_B = [
+        'sample_011', 'sample_012', 'sample_013', 'sample_014']
 
-# Now we can obtain the risk score and the dosage (amount of the effect allele) 
+# Now we can obtain the risk score and the dosage (amount of the effect allele)
 # for each rsids given the samples on the groups A and B
 
 dosage_A, risk_A = genotype.riskscores(weights=path_to_weights,
