@@ -78,9 +78,8 @@ Output should be something like this:
 !! Run qctool -help for usage information.
 ```
 
-
 5. Install `hipsnp` and `ukbb_parser`:
 
 ```
 pip install hipsnp
-pip install https://github.com/kaurao/ukbb_parser.git
+pip install git+https://github.com/kaurao/ukbb_parser.git@filetype_unknown

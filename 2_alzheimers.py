@@ -6,12 +6,12 @@ configure_logging(level='INFO')
 
 rsids = ['rs429358', 'rs7412']
 
-workdir = '/data/project/ukb_rls/tmp/genetic'
+datadir = '/tmp/data'  # Where the datalad dataset is/will be
+workdir = '/tmp/work'  # Where the intermediate files / results are/will be
 
 # Get the genotype, might take some time to clone the datalad dataset
 genotype = genotype_from_datalad(
-    rsids=rsids, workdir=workdir, datadir=workdir)
-
+    rsids=rsids, workdir=workdir, datadir=datadir)
 
 # Get the alleles
 gen_allele, gen_012 = genotype.alleles(rsids=rsids)
